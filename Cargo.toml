@@ -1,0 +1,12 @@
+[package]
+
+name = "literator"
+version = "0.0.1"
+authors = ["Keegan McAllister <mcallister.keegan@gmail.com>"]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/kmcallister/fixed-size-array"
+readme = "README.md"
+description = "Macros for container initialization and iterator literals"
+
+[dependencies.fixed_size_array]
+git = "https://github.com/kmcallister/fixed-size-array"
