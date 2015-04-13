@@ -9,7 +9,9 @@ use std::raw::Repr;
 use fixed_size_array::FixedSizeArray;
 
 /// An iterator constructed by the `literator!` macro.
-pub struct Literator<Array, Elem> {
+pub struct Literator<Array, Elem>
+    where Array: FixedSizeArray<Elem=Elem>
+{
     pos: isize,
     array: Option<Array>,
     phantom: PhantomData<[Elem; 17]>,
