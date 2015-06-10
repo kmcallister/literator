@@ -10,7 +10,7 @@ fn test_hashmap() {
         2 => 'y',
     };
 
-    assert_eq!(h[1], 'x');
-    assert_eq!(h[2], 'y');
+    assert_eq!(h[&1], 'x');
+    assert_eq!(h[&2], 'y');
     assert_eq!(h.len(), 2);
 }

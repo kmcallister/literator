@@ -1,4 +1,4 @@
-#![feature(unsafe_destructor, core)]
+#![feature(core)]
 
 extern crate fixed_size_array;
 
@@ -9,7 +9,9 @@ use std::raw::Repr;
 use fixed_size_array::FixedSizeArray;
 
 /// An iterator constructed by the `literator!` macro.
-pub struct Literator<Array, Elem> {
+pub struct Literator<Array, Elem>
+    where Array: FixedSizeArray<Elem=Elem>
+{
     pos: isize,
     array: Option<Array>,
     phantom: PhantomData<[Elem; 17]>,
@@ -52,7 +54,6 @@ impl<Array, Elem> Iterator for Literator<Array, Elem>
     }
 }
 
-#[unsafe_destructor]
 impl<Array, Elem> Drop for Literator<Array, Elem>
     where Array: FixedSizeArray<Elem=Elem>
 {
