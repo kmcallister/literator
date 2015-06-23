@@ -1,4 +1,4 @@
-#![feature(core)]
+#![feature(raw)]
 
 extern crate fixed_size_array;
 
